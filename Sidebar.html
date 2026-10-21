@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><base target="_top">
+<style>body{font-family:Arial,sans-serif;padding:12px;font-size:13px}label{display:block;margin-top:8px}input{width:100%;padding:4px}button{margin-top:10px;padding:6px 12px}#out{font-size:20px;margin-top:10px;font-weight:bold}code{background:#f1f3f4;padding:1px 3px}a{color:#1a73e8}</style></head>
+<body>
+<h3>Payout calculator</h3>
+<label>Views <input id="v" type="number" value="100000"></label>
+<label>CPM ($ per 1,000 views) <input id="c" type="number" step="0.01" value="1.5"></label>
+<label>Cap per post ($, optional) <input id="k" type="number"></label>
+<button onclick="go()">Calculate</button>
+<div id="out"></div>
+<h4>Functions</h4>
+<p><code>=CLIPPING_PAYOUT(views, cpm, [cap], [min_views])</code><br><code>=CLIPPING_CPM(spend, views)</code><br><code>=CLIPPING_VIEWS_NEEDED(payout, cpm)</code><br><code>=CLIPPING_BUDGET(views, cpm, [fee_pct])</code></p>
+<h4>More free tools</h4>
+<p><a href="https://viewsbase.com/tools/clipping-cpm-calculator?utm_source=sheets_addon" target="_blank">Clipping CPM calculator</a><br>
+<a href="https://viewsbase.com/tools/creator-payout-calculator?utm_source=sheets_addon" target="_blank">Creator payout calculator</a><br>
+<a href="https://viewsbase.com/blog/state-of-clipping-campaigns-2026?utm_source=sheets_addon" target="_blank">State of Clipping Campaigns 2026</a></p>
+<p>Tired of copying view counts? <a href="https://viewsbase.com/?utm_source=sheets_addon" target="_blank">ViewsBase</a> tracks TikTok, Reels and Shorts views automatically and flags fake views.</p>
+<script>
+function go(){var v=document.getElementById('v').value,c=document.getElementById('c').value,k=document.getElementById('k').value;
+google.script.run.withSuccessHandler(function(r){document.getElementById('out').textContent='$'+r}).withFailureHandler(function(e){document.getElementById('out').textContent=e.message}).calc(v,c,k);}
+</script>
+</body></html>

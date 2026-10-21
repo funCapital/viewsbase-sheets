@@ -1,0 +1,17 @@
+{
+  "timeZone": "Etc/UTC",
+  "runtimeVersion": "V8",
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets.currentonly",
+    "https://www.googleapis.com/auth/script.container.ui"
+  ],
+  "addOns": {
+    "common": {
+      "name": "Clipping Payout Calculator",
+      "logoUrl": "https://viewsbase.com/brand/viewsbase-mcp-256.v1.png",
+      "homepageTrigger": { "runFunction": "onHomepage", "enabled": true }
+    },
+    "sheets": {}
+  }
+}
