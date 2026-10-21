@@ -15,17 +15,6 @@ function onOpen(e) {
 
 function onInstall(e) { onOpen(e); }
 
-function onHomepage(e) {
-  return CardService.newCardBuilder()
-    .setHeader(CardService.newCardHeader().setTitle('Clipping Payout Calculator'))
-    .addSection(CardService.newCardSection()
-      .addWidget(CardService.newTextParagraph().setText(
-        'Use =CLIPPING_PAYOUT(views, cpm, cap) and =CLIPPING_CPM(spend, views) in any cell. Open Extensions → Clipping Payout Calculator → Open calculator for the sidebar.'))
-      .addWidget(CardService.newTextButton().setText('Free tools on ViewsBase')
-        .setOpenLink(CardService.newOpenLink().setUrl('https://viewsbase.com/tools?utm_source=sheets_addon'))))
-    .build();
-}
-
 function showSidebar() {
   var html = HtmlService.createHtmlOutputFromFile('Sidebar').setTitle('Clipping Payout Calculator');
   SpreadsheetApp.getUi().showSidebar(html);
